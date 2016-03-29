@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Kpn.LoRa.Client.Extensions;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,6 +78,8 @@ namespace Kpn.LoRa.Client
             };
 
             var response = PostJsonAsync($"/thingpark/smp/rest/admins/{thingparkId}/accessCode", accessCode).Result;
+            response.HandleResponseErrors();
+
             string result = await response.Content.ReadAsStringAsync();
             dynamic resultObj = JsonConvert.DeserializeObject(result);
             return resultObj.accessCode.ToString();

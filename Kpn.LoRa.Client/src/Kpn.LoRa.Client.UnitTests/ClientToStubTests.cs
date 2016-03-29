@@ -21,10 +21,32 @@ namespace Kpn.LoRa.Client.UnitTests
 
     public class ClientToStubTests
     {
+        private string _username;
+        private string _password;
+        private string _subscriberId;
+        private string _endPoint;
+
+        internal ClientToStubTests(string username, string password, string subscriberId, string endpoint)
+        {
+            _username = username;
+            _password = password;
+            _subscriberId = subscriberId;
+            _endPoint = endpoint;
+        }
+
+        public ClientToStubTests() : this("nobody", "notasecret", "100000000", "https://localhost:44394/")
+        {
+            //default
+        }
+
+
+
+
+
         ILoRaClient CreateLoRaClient()
         {
 
-            return new LoRaClient("nobody", "nopass", "100000000", "https://localhost:44394/");
+            return new LoRaClient(_username, _password, _subscriberId, _endPoint);
         }
 
         [Fact]
@@ -224,19 +246,20 @@ namespace Kpn.LoRa.Client.UnitTests
                         ID = modelId
                     },
                     nwAddress = "0B60D265",
-                    EUI = "200000000F252D96",
+                    EUI = "200000000F252D98",
                     nwKey = "12345678901234567890123456789012"
                 };
 
+
                 var result = client.AddDevice(customers.subscription.href, device).Result;
 
-
-                Assert.NotNull(result);
-                Assert.True(client.GetDevices(customers.subscription.href).Result
-                    .briefs.Any(d => d.EUI == "200000000F252D96"));
-
+                var allCurrentDevices = client.GetDevices(customers.subscription.href).Result;
                 //cleanup
                 client.RemoveDevice(result.href);
+
+                Assert.NotNull(result);
+                Assert.True(allCurrentDevices.briefs.Any(d => d.EUI == "200000000F252D98"));
+
             }
         }
 
@@ -256,7 +279,7 @@ namespace Kpn.LoRa.Client.UnitTests
                         ID = modelId
                     },
                     nwAddress = "0B60D266",
-                    EUI = "200000000F252D97",
+                    EUI = "200000000F252D95",
                     nwKey = "12345678901234567890123456789013"
                 };
 
@@ -268,12 +291,12 @@ namespace Kpn.LoRa.Client.UnitTests
 
 
                 Assert.True(devices.briefs
-                    .Any(d => d.EUI == "200000000F252D97"));
+                    .Any(d => d.EUI == "200000000F252D95"));
 
                 var endresult = client.GetDevices(customers.subscription.href).Result.briefs;
 
                 Assert.False(endresult
-                    .Any(d => d.EUI == "200000000F252D97"));
+                    .Any(d => d.EUI == "200000000F252D95"));
             }
         }
 
@@ -300,7 +323,7 @@ namespace Kpn.LoRa.Client.UnitTests
 
                 var result = client.AddDevice(customers.subscription.href, newDevice).Result;
                 var devices = client.GetDevices(customers.subscription.href).Result;
-                var device = devices.briefs.Single(d => d.EUI == "200000000F252D97");
+                var device = devices.briefs.First(d => d.EUI == "200000000F252D97");
 
                 //Act
                 var updateDevice = new DeviceUpdateModel.Device
@@ -313,7 +336,7 @@ namespace Kpn.LoRa.Client.UnitTests
 
                 //Get Aftermath
                 var afterupdatedevices = client.GetDevices(customers.subscription.href).Result;
-                var afterupdatedevice = afterupdatedevices.briefs.Single(d => d.EUI == "200000000F252D97");
+                var afterupdatedevice = afterupdatedevices.briefs.First(d => d.EUI == "200000000F252D97");
 
                 //Cleanup
                 client.RemoveDevice(device.href);

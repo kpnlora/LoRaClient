@@ -20,6 +20,7 @@ using Kpn.LoRa.Client.Models.Devices;
 using Kpn.LoRa.Client.Models.Alarms;
 using Kpn.LoRa.Client.Models.DeviceViewModel;
 using System.Net.Http;
+using Kpn.LoRa.Client.Extensions;
 
 namespace Kpn.LoRa.Client
 {
@@ -45,7 +46,7 @@ namespace Kpn.LoRa.Client
         public async Task<DeviceProfiles.DeviceProfiles> GetDeviceProfiles(string subscriptionHref)
         {
             var response = await _loRaHttpClient.GetAsync($"{_restPath}{subscriptionHref}/deviceProfiles");
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<DeviceProfiles.DeviceProfiles>(result);
@@ -54,7 +55,7 @@ namespace Kpn.LoRa.Client
         public async Task<Customers.Customers> GetCustomers()
         {
             var response = await _loRaHttpClient.GetAsync($"{_restPath}/customers");
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Customers.Customers>(result);
@@ -63,7 +64,7 @@ namespace Kpn.LoRa.Client
         public async Task<NetworkSubscriptions.NetworkSubscriptions> GetNetworkSubscriptions(string subscriptionHref)
         {
             var response = await _loRaHttpClient.GetAsync($"{_restPath}{subscriptionHref}/networkSubscriptions");
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<NetworkSubscriptions.NetworkSubscriptions>(result);
@@ -72,7 +73,7 @@ namespace Kpn.LoRa.Client
         public async Task<Alarms.Alarms> GetAlarms(string deviceHref)
         {
             var response = await _loRaHttpClient.GetAsync($"{deviceHref}/alarms");
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Alarms.Alarms>(result);
@@ -81,14 +82,14 @@ namespace Kpn.LoRa.Client
         public async Task AckAlarmsForDevice(string deviceHref)
         {
             var response = await _loRaHttpClient.PostAsync($"{deviceHref}/alarms/ack");
-            HandleResponse(response);
+            response.HandleResponseErrors();
         }
 
 
         public async Task<DeviceViewModel.Device> GetDevice(string deviceHref)
         {
             var response = await _loRaHttpClient.GetAsync($"{deviceHref}");
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<DeviceViewModel.Device>(result);
@@ -96,7 +97,7 @@ namespace Kpn.LoRa.Client
         public async Task<Devices.Devices> GetDevices(string subscriptionHref)
         {
             var response = await _loRaHttpClient.GetAsync($"{_restPath}{subscriptionHref}/devices");
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Devices.Devices>(result);
@@ -105,7 +106,7 @@ namespace Kpn.LoRa.Client
         public async Task<DeviceViewModel.Device> AddDevice(string subscriptionHref, DeviceAddModel.Device device)
         {
             var response = await _loRaHttpClient.PostJsonAsync($"{_restPath}{subscriptionHref}/devices", device);
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             var addedDevice = JsonConvert.DeserializeObject<DeviceViewModel.Device>(result);
@@ -119,7 +120,7 @@ namespace Kpn.LoRa.Client
         public async Task<DeviceViewModel.Device> UpdateDevice(string deviceHref, DeviceUpdateModel.Device device)
         {
             var response = await _loRaHttpClient.PutJsonAsync($"{deviceHref}", device);
-            HandleResponse(response);
+            response.HandleResponseErrors();
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<DeviceViewModel.Device>(result);
         }
@@ -127,13 +128,13 @@ namespace Kpn.LoRa.Client
         public async Task RemoveDevice(string deviceHref)
         {
             var response = await _loRaHttpClient.DeleteAsync($"{deviceHref}");
-            HandleResponse(response);
+            response.HandleResponseErrors();
         }
 
         public async Task<AppServerRoutingProfileViewModel.AppServersRoutingProfile> GetAppServerRoutingProfile(string appServersRoutingProfileHref)
         {
             var response = await _loRaHttpClient.GetAsync($"{appServersRoutingProfileHref}");
-            HandleResponse(response);
+            response.HandleResponseErrors();
 
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<AppServerRoutingProfileViewModel.AppServersRoutingProfile>(result);
@@ -142,7 +143,7 @@ namespace Kpn.LoRa.Client
         public async Task<AppServerRoutingProfileViewModel.AppServersRoutingProfile> AddAppServerRoutingProfile(string subscriptionHref, AppServerRoutingProfileAddModel.AppServersRoutingProfile appServersRoutingProfile)
         {
             var response = await _loRaHttpClient.PostJsonAsync($"{_restPath}{subscriptionHref}/appServersRoutingProfiles", appServersRoutingProfile);
-            HandleResponse(response);
+            response.HandleResponseErrors();
             string result = await response.Content.ReadAsStringAsync();
             var profile = JsonConvert.DeserializeObject<AppServerRoutingProfileViewModel.AppServersRoutingProfile>(result);
             var locationHeader = response.Headers.GetValues("Location");
@@ -153,7 +154,7 @@ namespace Kpn.LoRa.Client
         public async Task<AppServerRoutingProfileViewModel.AppServersRoutingProfile> UpdateAppServerRoutingProfile(string appServersRoutingProfileHref, AppServerRoutingProfileUpdateModel.AppServersRoutingProfile appServersRoutingProfile)
         {
             var response = await _loRaHttpClient.PutJsonAsync($"{appServersRoutingProfileHref}", appServersRoutingProfile);
-            HandleResponse(response);
+            response.HandleResponseErrors();
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<AppServerRoutingProfileViewModel.AppServersRoutingProfile>(result);
         }
@@ -161,7 +162,7 @@ namespace Kpn.LoRa.Client
         public async Task<AppServerRoutingProfiles.AppServersRoutingProfiles> GetAppServerRoutingProfiles(string subscriptionHref)
         {
             var response = await _loRaHttpClient.GetAsync($"{_restPath}{subscriptionHref}/appServersRoutingProfiles");
-            HandleResponse(response);
+            response.HandleResponseErrors();
             string result = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<AppServerRoutingProfiles.AppServersRoutingProfiles>(result);
         }
@@ -169,19 +170,10 @@ namespace Kpn.LoRa.Client
         public async Task RemoveAppServerRoutingProfile(string appServersRoutingProfileHref)
         {
             var response = await _loRaHttpClient.DeleteAsync($"{appServersRoutingProfileHref}");
-            HandleResponse(response);
+            response.HandleResponseErrors();
         }
 
 
-        private void HandleResponse(HttpResponseMessage response)
-        {
-            if (response.IsSuccessStatusCode)
-            {
-                return;
-            }
-
-            string result = response.Content.ReadAsStringAsync().Result;
-            throw new HttpRequestException($"Response code {response.StatusCode}: {result}");
-        }
+      
     }
 }

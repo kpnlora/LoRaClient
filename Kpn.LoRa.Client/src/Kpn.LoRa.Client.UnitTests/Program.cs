@@ -12,8 +12,8 @@ namespace Kpn.LoRa.Client.UnitTests
         public static void Main(string[] args)
         {
             //workbench          
-
-
+            var tests = new ClientToStubTests("", "", "", "");
+            tests.GetCustomersTest();
         }
     }
 }

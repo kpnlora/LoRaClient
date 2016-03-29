@@ -14,6 +14,8 @@ namespace Kpn.LoRa.Api.Stub.Controllers
 
     public class DevicesController : Controller
     {
+        private static int _deviceSequenceId = 6000;
+
         private static List<Devices.Brief> _devices = new List<Devices.Brief>
         {
              new Devices.Brief
@@ -68,16 +70,19 @@ namespace Kpn.LoRa.Api.Stub.Controllers
         [Route("thingpark/wireless/rest/subscriptions/{subscriptionId}/devices")]
         public Device.Device Post(int subscriptionId, [FromBody] Device.Device device)
         {
+            _deviceSequenceId++;
             var briefs = _devices.ToList();
             var newBrief = new Models.Devices.Brief
             {
                 name = device.name,
                 EUI = device.EUI,
-                href = $"/thingpark/wireless/rest/subscriptions/100/devices/{_devices.Count() + 5000}"
+                href = $"/thingpark/wireless/rest/subscriptions/100/devices/{_deviceSequenceId}"
             };
 
+        
             _devices.Add(newBrief);
 
+            
             Response.Headers.Add("Location", newBrief.href);
 
             return device;
