@@ -1,0 +1,35 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "Kpn.LoRa.Client.UnitTests Console Application",
+  "authors": [ "O.van.Tol" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "Kpn.LoRa.Client": "0.2.1-beta"
+  },
+
+  "commands": {
+    "Kpn.LoRa.Client.UnitTests": "Kpn.LoRa.Client.UnitTests"
+  },
+
+  "frameworks": {
+    
+    "dnxcore50": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Console": "4.0.0-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Threading": "4.0.11-beta-23516",
+        "xunit": "2.2.0-beta1-build3239",
+        "xunit.runner.console": "2.2.0-beta1-build3239"
+      }
+    }
+  }
+}
