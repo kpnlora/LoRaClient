@@ -11,11 +11,15 @@
   },
 
   "dependencies": {
-    "Kpn.LoRa.Client": "0.2.1-beta"
+    "Kpn.LoRa.Client": "0.2.1-beta",
+    "xunit": "2.2.0-beta1-build3239",
+    "xunit.runner.dnx": "2.1.0-rc1-build204"
+
   },
 
   "commands": {
-    "Kpn.LoRa.Client.UnitTests": "Kpn.LoRa.Client.UnitTests"
+    "Kpn.LoRa.Client.UnitTests": "Kpn.LoRa.Client.UnitTests",
+    "test": "xunit.runner.dnx"
   },
 
   "frameworks": {
@@ -26,9 +30,7 @@
         "System.Collections": "4.0.11-beta-23516",
         "System.Console": "4.0.0-beta-23516",
         "System.Linq": "4.0.1-beta-23516",
-        "System.Threading": "4.0.11-beta-23516",
-        "xunit": "2.2.0-beta1-build3239",
-        "xunit.runner.console": "2.2.0-beta1-build3239"
+        "System.Threading": "4.0.11-beta-23516"
       }
     }
   }

@@ -23,7 +23,8 @@ namespace Kpn.LoRa.Client.UnitTests
     {
         ILoRaClient CreateLoRaClient()
         {
-            return new LoRaClient("nobody", "nopass", "100000000", "https://localhost:44361/");
+
+            return new LoRaClient("nobody", "nopass", "100000000", "https://localhost:44394/");
         }
 
         [Fact]
@@ -269,7 +270,9 @@ namespace Kpn.LoRa.Client.UnitTests
                 Assert.True(devices.briefs
                     .Any(d => d.EUI == "200000000F252D97"));
 
-                Assert.True(client.GetDevices(customers.subscription.href).Result.briefs
+                var endresult = client.GetDevices(customers.subscription.href).Result.briefs;
+
+                Assert.False(endresult
                     .Any(d => d.EUI == "200000000F252D97"));
             }
         }
