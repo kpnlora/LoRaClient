@@ -10,6 +10,8 @@ namespace Kpn.LoRa.Api.Stub.Controllers
 {
     public class AppServersRoutingProfilesController : Controller
     {
+        private static int _profileSequenceId = 20;
+
         private static List<AppServersRoutingProfiles.Brief> _routingProfiles =
            new List<AppServersRoutingProfiles.Brief>
             {
@@ -39,7 +41,11 @@ namespace Kpn.LoRa.Api.Stub.Controllers
         {
             return new AppServersRoutingProfiles.AppServersRoutingProfile
             {
-                name = "NoAS"
+                name = "NoAS",
+                routes = new Models.AppServersRoutingProfiles.Route[]
+                {
+                 
+                }
             };
         }
 
@@ -50,7 +56,7 @@ namespace Kpn.LoRa.Api.Stub.Controllers
             var newProfile = new AppServersRoutingProfiles.Brief
             {
                 name = appServersRoutingProfile.name,
-                href = $"thingpark/wireless/rest/subscriptions/{subscriptionId}/appServersRoutingProfiles/{_routingProfiles.Count() + 1}"
+                href = $"thingpark/wireless/rest/subscriptions/{subscriptionId}/appServersRoutingProfiles/{++_profileSequenceId}"
             };
             _routingProfiles.Add(newProfile);
             Response.Headers.Add("Location", newProfile.href);

@@ -62,6 +62,10 @@ namespace Kpn.LoRa.Api.Stub.Controllers
                 model = new Device.Model
                 {
                     commercialName = brief.model.commercialName
+                },
+                appServersRoutingProfile = new Models.Device.Appserversroutingprofile
+                {
+                    href = new AppServersRoutingProfilesController().Get(100).briefs.First().href
                 }
             };
         }
