@@ -1,7 +1,54 @@
 # LoRaClient
-This is a csharp client library build to simplify the usage of the Actility Api which is available for the Kpn LoRa network. It is not yet complete but offers the most common functions.  
 
-The client is published as a [https://www.nuget.org/packages/Kpn.LoRa.Client/](NuGet package) and the source code is shared on GitHub. 
+## Introduction
+This is a C# client library build to simplify the usage of the API which is available for the KPN LoRa network.
 
-In this repository you can also find the stub api which fakes some of the behavior of the actual Actility platform.
+The client is published as a [NuGet package](https://www.nuget.org/packages/Kpn.LoRa.Client/) and the source code is available on [GitHub](https://github.com/kpnlora/LoRaClient/). 
 
+This repository also contains a **Stub** for the API which fakes most of the behavior, allowing you to test outside the network.
+
+## Get Started
+
+### .NET Core platform
+Simply add a dependency to `Kpn.LoRa.Client` in your project.json file.
+
+### Older versions of .NET
+Right click on your project in Visual Studio and select **Manage NuGet Packages**. Select the **Browse** tab, search for `Kpn.LoRa.Client` and click install.
+
+## Example: Create a connection with the LoRaClient
+To start coding with the LoRaClient, add the following usings
+```C#
+using Kpn.LoRa.Client;
+```
+
+To start making calls, initiate a new LoRa client
+```C#
+using (ILoRaClient client = new LoRaClient("username", "password", "subscriberId", "baseAddress"))
+{
+	// Example 1: Retrieve customer information
+	var customers = await client.GetCustomers();
+
+	// Example 2: Retrieve network connections
+	var networkSubscriptions = await client.GetNetworkSubscriptions(customers.subscription.href);
+
+	// Example 3: Retrieve device profiles
+	var deviceProfiles = await client.GetDeviceProfiles(customers.subscription.href);
+
+	// Example 4: Retrieve devices
+	await client.GetDevices(customers.subscription.href);
+}
+```
+
+## Complete list of available calls
+
+
+## LoRa API stub
+
+
+## Contributors
+
+
+## License
+The LoRa Client is under the [MIT license][MIT].
+
+[MIT]:LICENSE.md
