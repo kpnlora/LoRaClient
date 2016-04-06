@@ -40,7 +40,28 @@ using (ILoRaClient client = new LoRaClient("username", "password", "subscriberId
 ```
 
 ## Complete list of available calls
+### Related to the subscription
+* GetCustomers
+* GetDeviceProfiles
+* GetNetworkSubscriptions
 
+### Related to routing profiles
+* GetAppServerRoutingProfiles
+* GetAppServerRoutingProfile
+* AddAppServerRoutingProfile
+* UpdateAppServerRoutingProfile
+* RemoveAppServerRoutingProfile
+
+### Related to devices
+* GetDevices
+* GetDevice
+* AddDevice
+* UpdateDevice
+* RemoveDevice
+
+### Related to alarms
+* GetAlarms
+* AckAlarmsForDevice
 
 ## LoRa API stub
 
