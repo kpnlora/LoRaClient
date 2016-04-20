@@ -7,6 +7,9 @@ The client is published as a [NuGet package](https://www.nuget.org/packages/Kpn.
 
 This repository also contains a **Stub** for the API which fakes most of the behavior, allowing you to test outside the network.
 
+For more information about LoRa, visit the [KPN LoRa](http://www.kpn.com/lora) website.
+For sales information, please contact KPN by mail at iot@kpn.com or by phone at 088-6601034
+
 ## Get Started
 
 ### .NET Core platform
