@@ -1,0 +1,5 @@
+﻿<div class="list-group">
+	<a class="list-group-item @(ViewContext.RouteData.Values["Action"].ToString() == "Customers" ? "active" : "")" asp-controller="LoRa" asp-action="Customers">Customers</a>
+	<a class="list-group-item @(ViewContext.RouteData.Values["Action"].ToString() == "DeviceProfiles" ? "active" : "")" asp-controller="LoRa" asp-action="DeviceProfiles">Device profiles</a>
+	<a class="list-group-item @(ViewContext.RouteData.Values["Action"].ToString() == "NetworkSubscriptions" ? "active" : "")" asp-controller="LoRa" asp-action="NetworkSubscriptions">Network subscriptions</a>
+</div>

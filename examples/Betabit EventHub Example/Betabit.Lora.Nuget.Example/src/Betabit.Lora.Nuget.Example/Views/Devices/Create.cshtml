@@ -1,0 +1,67 @@
+@model Betabit.Lora.Nuget.Example.ViewModels.DeviceViewModel
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+<hr />
+<form asp-action="Create">
+	<div class="form-horizontal">
+		<h4>Device information</h4>
+		<div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+		<div class="form-group">
+			<label asp-for="Name" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="RoomId" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<select asp-for="RoomId" asp-items="@(new SelectList(Model.AvailableRooms,"Id","Name"))">
+				</select>
+				<span asp-validation-for="RoomId" class="text-danger" />
+			</div>
+		</div>
+		<hr />
+		<h4>LoRa information</h4>
+		<div class="form-group">
+			<label asp-for="DeviceAddress" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="DeviceAddress" class="form-control" />
+				<span asp-validation-for="DeviceAddress" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="NetworkAddress" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="NetworkAddress" class="form-control" />
+				<span asp-validation-for="NetworkAddress" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="NetworkKey" class="col-md-2 control-label"></label>
+			<div class="col-md-10">
+				<input asp-for="NetworkKey" class="form-control" />
+				<span asp-validation-for="NetworkKey" class="text-danger" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Create" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+</form>
+
+<div>
+	<a asp-action="Index">Back to overview</a>
+</div>
+
+@section Scripts {
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

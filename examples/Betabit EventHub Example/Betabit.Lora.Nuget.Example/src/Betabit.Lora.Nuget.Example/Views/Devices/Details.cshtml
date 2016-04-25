@@ -1,0 +1,54 @@
+@model Betabit.Lora.Nuget.Example.Models.Device
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+<hr />
+<div>
+	<h4>Device information</h4>
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Room)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Room.Name)
+		</dd>
+	</dl>
+	<hr />
+	<h4>LoRa information</h4>
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.DeviceAddress)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.DeviceAddress)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.NetworkAddress)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.NetworkAddress)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.NetworkKey)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.NetworkKey)
+		</dd>
+	</dl>
+</div>
+<p>
+	<a asp-action="Register" asp-route-id="@Model.Id">Register</a> | 
+	<a asp-action="Unregister" asp-route-id="@Model.Id">Unregister</a>
+	<hr />
+	<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> | 
+	<a asp-action="Index">Back to overview</a>
+</p>
