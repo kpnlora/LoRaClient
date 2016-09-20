@@ -1,18 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9FD6D525-CA57-46BC-AB9A-05CBFDE2F8C3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{64520E4D-24BB-4AA8-923A-F27DFDBA39EF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EFD0852B-E25C-4301-9907-E2A4403CEB40}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{12E74E48-844E-4159-AD19-08276B8F69AB}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Kpn.LoRa.Client", "src\Kpn.LoRa.Client\Kpn.LoRa.Client.xproj", "{948C6585-7B40-4058-A049-5348BB4B52B8}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Kpn.LoRa.Client", "src\Kpn.LoRa.Client\Kpn.LoRa.Client.xproj", "{987305E2-8549-4F1F-9386-A38968E28FE4}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Kpn.LoRa.Client.UnitTests", "src\Kpn.LoRa.Client.UnitTests\Kpn.LoRa.Client.UnitTests.xproj", "{229E64C1-0736-4144-B203-A9358B2B2584}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Kpn.LoRa.Client.Tests", "src\Kpn.LoRa.Client.Tests\Kpn.LoRa.Client.Tests.xproj", "{7AFC38DB-C2A3-4163-A205-6FDF36378D9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,20 +20,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{948C6585-7B40-4058-A049-5348BB4B52B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{948C6585-7B40-4058-A049-5348BB4B52B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{948C6585-7B40-4058-A049-5348BB4B52B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{948C6585-7B40-4058-A049-5348BB4B52B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{229E64C1-0736-4144-B203-A9358B2B2584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{229E64C1-0736-4144-B203-A9358B2B2584}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{229E64C1-0736-4144-B203-A9358B2B2584}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{229E64C1-0736-4144-B203-A9358B2B2584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{987305E2-8549-4F1F-9386-A38968E28FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{987305E2-8549-4F1F-9386-A38968E28FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{987305E2-8549-4F1F-9386-A38968E28FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{987305E2-8549-4F1F-9386-A38968E28FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AFC38DB-C2A3-4163-A205-6FDF36378D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFC38DB-C2A3-4163-A205-6FDF36378D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFC38DB-C2A3-4163-A205-6FDF36378D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AFC38DB-C2A3-4163-A205-6FDF36378D9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{948C6585-7B40-4058-A049-5348BB4B52B8} = {9FD6D525-CA57-46BC-AB9A-05CBFDE2F8C3}
-		{229E64C1-0736-4144-B203-A9358B2B2584} = {9FD6D525-CA57-46BC-AB9A-05CBFDE2F8C3}
+		{987305E2-8549-4F1F-9386-A38968E28FE4} = {64520E4D-24BB-4AA8-923A-F27DFDBA39EF}
+		{7AFC38DB-C2A3-4163-A205-6FDF36378D9E} = {64520E4D-24BB-4AA8-923A-F27DFDBA39EF}
 	EndGlobalSection
 EndGlobal

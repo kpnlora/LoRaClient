@@ -1,34 +1,28 @@
 ﻿{
-  "version": "0.2.1-beta",
-  "title": "Kpn.LoRa.Client",
-  "description": "Kpn LoRa CSharp Client Lib.",
-  "authors": [ "O.van.Tol" ],
-  "tags": [ "LoRa", "Kpn", "Betabit", "Microsoft" ],
-  "projectUrl": "https://github.com/kpnlora/LoRaClient",
-  "licenseUrl": "https://raw.githubusercontent.com/kpnlora/LoRaClient/master/LICENSE.md",
-  "iconUrl": "https://raw.githubusercontent.com/kpnlora/LoRaClient/master/lora.png",
-  "requireLicenseAcceptance": false,
-  "frameworks": {
-    "net451": {
-      "dependencies": {
-        "Microsoft.Net.Http": "2.2.22",
-        "Newtonsoft.Json": "8.0.3",
-        "System.Net.Http": "4.0.1-beta-23516"
-        
-      }
-    },
-    "dotnet5.4": {
-      "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Threading": "4.0.11-beta-23516",
-        "Newtonsoft.Json": "8.0.3",
-        "System.Xml.XmlSerializer": "4.0.11-beta-23516",
-        "System.Net.Http": "4.0.1-beta-23516"
-     
-      }
-    }
-  }
+	"version": "1.0.0-beta",
+	"title": "Kpn.LoRa.Client",
+	"description": "Kpn LoRa CSharp Client Lib.",
+	"authors": [ "S.Hack", "O.van.Tol" ],
+	"tags": [ "LoRa", "Kpn", "Betabit", "Microsoft" ],
+	"projectUrl": "https://github.com/kpnlora/LoRaClient",
+	"licenseUrl": "https://raw.githubusercontent.com/kpnlora/LoRaClient/master/LICENSE.md",
+	"iconUrl": "https://raw.githubusercontent.com/kpnlora/LoRaClient/master/lora.png",
+	"requireLicenseAcceptance": false,
+
+	"dependencies": {
+		"NETStandard.Library": "1.6.0",
+		"Newtonsoft.Json": "9.0.1"
+	},
+
+	"frameworks": {
+		"netstandard1.6": {
+			"imports": "dnxcore50"
+		}
+	},
+
+	"scripts": {
+		"postcompile": [
+			"dotnet pack --no-build --configuration %compile:Configuration%"
+		]
+	}
 }

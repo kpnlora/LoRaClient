@@ -1,0 +1,28 @@
+﻿{
+	"version": "2.0.0-*",
+	"description": "Kpn.LoRa.Reader.Tests Console Application",
+	"authors": [ "S.Hack", "O.van.Tol" ],
+	"tags": [ "" ],
+	"projectUrl": "",
+	"licenseUrl": "",
+
+	"testRunner": "xunit",
+	"dependencies": {
+		"NETStandard.Library": "1.6.0",
+		"xunit": "2.2.0-beta2-build3300",
+		"xunit.runner.visualstudio": "2.2.0-beta2-build1149",
+		"dotnet-test-xunit": "2.2.0-preview2-build1029",
+		"Kpn.LoRa.Reader": "1.0.0-beta"
+	},
+
+	"frameworks": {
+		"netcoreapp1.0": {
+			"dependencies": {
+				"Microsoft.NETCore.App": {
+					"type": "platform",
+					"version": "1.0.0"
+				}
+			}
+		}
+	}
+}

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Kpn.LoRa.Client.Models
+﻿namespace Kpn.LoRa.Client.Core.Models
 {
+	public class AccessCode
+	{
+		public string moduleID { get; set; }
 
-    public class AccessCode
-    {
-        public string moduleID { get; set; }
-        public string subscriberID { get; set; }
-    }
-
+		public string subscriberID { get; set; }
+	}
 }
