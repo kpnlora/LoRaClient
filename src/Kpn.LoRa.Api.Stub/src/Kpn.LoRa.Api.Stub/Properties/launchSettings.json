@@ -1,10 +1,10 @@
 {
   "iisSettings": {
-    "windowsAuthentication": true,
+    "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "https://localhost:44394/",
-      "sslPort": 44394
+      "applicationUrl": "http://localhost:17655/",
+      "sslPort": 0
     }
   },
   "profiles": {
@@ -12,13 +12,15 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "Hosting:Environment": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "web": {
-      "commandName": "web",
+    "Kpn.Lora.Api.Stub": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:5000",
       "environmentVariables": {
-        "Hosting:Environment": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }

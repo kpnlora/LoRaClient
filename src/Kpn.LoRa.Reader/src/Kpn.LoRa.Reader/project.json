@@ -1,5 +1,5 @@
-{
-	"version": "0.2.1-beta",
+﻿{
+	"version": "1.0.0-beta",
 	"title": "Kpn.LoRa.Reader",
 	"description": "Kpn LoRa CSharp Reader Lib.",
 	"authors": [ "S.Hack", "O.van.Tol" ],
@@ -8,19 +8,20 @@
 	"licenseUrl": "https://raw.githubusercontent.com/kpnlora/LoRaClient/master/LICENSE.md",
 	"iconUrl": "https://raw.githubusercontent.com/kpnlora/LoRaClient/master/lora.png",
 	"requireLicenseAcceptance": false,
+
+	"dependencies": {
+		"NETStandard.Library": "1.6.0"
+	},
+
 	"frameworks": {
-		"net451": {
-			"frameworkAssemblies": {
-				"System.Xml": "4.0.0.0",
-				"System.Xml.Linq": "4.0.0.0"
-			}
-		},
-		"dotnet5.4": {
-			"dependencies": {
-				"Microsoft.CSharp": "4.0.1-beta-23516",
-				"System.Linq": "4.0.1-beta-23516",
-				"System.Xml.XDocument": "4.0.11-beta-23516"
-			}
+		"netstandard1.6": {
+			"imports": "dnxcore50"
 		}
+	},
+
+	"scripts": {
+		"postcompile": [
+			"dotnet pack --no-build --configuration %compile:Configuration%"
+		]
 	}
 }

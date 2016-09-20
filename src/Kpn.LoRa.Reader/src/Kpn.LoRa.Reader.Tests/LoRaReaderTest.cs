@@ -7,7 +7,7 @@ namespace Kpn.LoRa.Reader.UnitTests
 	/// This class provides tests for the LoRaReader class.
 	/// It will use the XML from TestSample.xml for the tests.
 	/// </summary>
-	public class ReaderTests
+	public class LoRaReaderTest
 	{
 		/// <summary>
 		/// The lora reader
@@ -15,9 +15,9 @@ namespace Kpn.LoRa.Reader.UnitTests
 		private LoRaReader loraReader;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ReaderTests"/> class.
+		/// Initializes a new instance of the <see cref="LoRaReaderTest"/> class.
 		/// </summary>
-		public ReaderTests()
+		public LoRaReaderTest()
 		{
 			// Create a XDocument structure from the sample XML
 			var xdoc = XDocument.Load(@"TestSample.xml");
