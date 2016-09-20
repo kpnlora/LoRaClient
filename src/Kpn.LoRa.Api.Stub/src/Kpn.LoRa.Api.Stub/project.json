@@ -22,8 +22,8 @@
 		"Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
 		"System.Xml.XmlSerializer": "4.0.11",
 		"Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
-		"Swashbuckle.SwaggerUi": "6.0.0-rc1-final",
-		"Swashbuckle.SwaggerGen": "6.0.0-rc1-final"
+		"Swashbuckle.SwaggerUi": "6.0.0-beta902",
+		"Swashbuckle.SwaggerGen": "6.0.0-beta902"
 	},
 
 	"tools": {
