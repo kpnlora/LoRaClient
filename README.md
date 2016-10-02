@@ -1,7 +1,7 @@
 # LoRaClient
 
 ## Introduction
-This is a C# client library build to simplify the usage of the API which is available for the KPN LoRa network.
+This is a C# client library built to simplify the usage of the API which is available for the KPN LoRa network.
 
 The client is published as a [NuGet package](https://www.nuget.org/packages/Kpn.LoRa.Client/) and the source code is available on [GitHub](https://github.com/kpnlora/LoRaClient/). 
 
