@@ -1,14 +1,20 @@
-﻿using Microsoft.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 
 namespace Betabit.Lora.Nuget.Example.Models
 {
 	/// <summary>
 	/// The application database context.
 	/// </summary>
-	/// <seealso cref="Microsoft.Data.Entity.DbContext" />
+	/// <seealso cref="DbContext" />
 	public class AppDbContext : DbContext
 	{
-		/// <summary>
+	    public AppDbContext(DbContextOptions options) : base(options)
+	    {
+	    }
+
+	    /// <summary>
 		/// The database context for rooms
 		/// </summary>
 		public DbSet<Room> Rooms { get; set; }

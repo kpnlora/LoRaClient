@@ -1,6 +1,5 @@
-using System;
-using System.Collections.Generic;
-using Microsoft.Data.Entity.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
+
 
 namespace Betabit.Lora.Nuget.Example.Migrations
 {
@@ -8,64 +7,64 @@ namespace Betabit.Lora.Nuget.Example.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(name: "FK_Device_Room_RoomID", table: "Device");
+            migrationBuilder.DropForeignKey(name: "FK_Device_Room_RoomID", table: "Devices");
             migrationBuilder.AddColumn<string>(
                 name: "DeviceAddress",
-                table: "Device",
+                table: "Devices",
                 nullable: true);
             migrationBuilder.AddColumn<string>(
                 name: "NetworkAddress",
-                table: "Device",
+                table: "Devices",
                 nullable: true);
             migrationBuilder.AddColumn<string>(
                 name: "NetworkKey",
-                table: "Device",
+                table: "Devices",
                 nullable: true);
             migrationBuilder.AddForeignKey(
                 name: "FK_Device_Room_RoomId",
-                table: "Device",
+                table: "Devices",
                 column: "RoomId",
-                principalTable: "Room",
+                principalTable: "Rooms",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
             migrationBuilder.RenameColumn(
                 name: "ID",
-                table: "Room",
+                table: "Rooms",
                 newName: "Id");
             migrationBuilder.RenameColumn(
                 name: "RoomID",
-                table: "Device",
+                table: "Devices",
                 newName: "RoomId");
             migrationBuilder.RenameColumn(
                 name: "ID",
-                table: "Device",
+                table: "Devices",
                 newName: "Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(name: "FK_Device_Room_RoomId", table: "Device");
-            migrationBuilder.DropColumn(name: "DeviceAddress", table: "Device");
-            migrationBuilder.DropColumn(name: "NetworkAddress", table: "Device");
-            migrationBuilder.DropColumn(name: "NetworkKey", table: "Device");
+            migrationBuilder.DropForeignKey(name: "FK_Device_Room_RoomId", table: "Devices");
+            migrationBuilder.DropColumn(name: "DeviceAddress", table: "Devices");
+            migrationBuilder.DropColumn(name: "NetworkAddress", table: "Devices");
+            migrationBuilder.DropColumn(name: "NetworkKey", table: "Devices");
             migrationBuilder.AddForeignKey(
                 name: "FK_Device_Room_RoomID",
-                table: "Device",
+                table: "Devices",
                 column: "RoomID",
-                principalTable: "Room",
+                principalTable: "Rooms",
                 principalColumn: "ID",
                 onDelete: ReferentialAction.Restrict);
             migrationBuilder.RenameColumn(
                 name: "Id",
-                table: "Room",
+                table: "Rooms",
                 newName: "ID");
             migrationBuilder.RenameColumn(
                 name: "RoomId",
-                table: "Device",
+                table: "Devices",
                 newName: "RoomID");
             migrationBuilder.RenameColumn(
                 name: "Id",
-                table: "Device",
+                table: "Devices",
                 newName: "ID");
         }
     }

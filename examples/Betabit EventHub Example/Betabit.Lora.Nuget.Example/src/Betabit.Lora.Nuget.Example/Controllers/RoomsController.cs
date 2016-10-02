@@ -1,5 +1,5 @@
 ﻿using Betabit.Lora.Nuget.Example.Models;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Linq;
 
@@ -38,7 +38,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct room using the ID
@@ -47,7 +47,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (room == null)
 			{
 				// If no room could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Render the details view with the room
@@ -85,7 +85,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct room using the ID
@@ -94,7 +94,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (room == null)
 			{
 				// If no room could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Render the details view with the room
@@ -126,7 +126,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct room using the ID
@@ -135,7 +135,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (room == null)
 			{
 				// If no room could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Render the details view with the room

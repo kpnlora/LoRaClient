@@ -1,12 +1,12 @@
 ﻿using Betabit.Lora.Nuget.Example.Models;
 using Betabit.Lora.Nuget.Example.ViewModels;
 using Kpn.LoRa.Client;
-using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace Betabit.Lora.Nuget.Example.Controllers
 {

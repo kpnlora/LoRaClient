@@ -1,8 +1,8 @@
 ﻿using Betabit.Lora.Nuget.Example.Models;
 using Betabit.Lora.Nuget.Example.ViewModels;
 using Kpn.LoRa.Client;
-using Microsoft.AspNet.Mvc;
-using Microsoft.Data.Entity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,7 +43,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct device using the ID
@@ -52,7 +52,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (device == null)
 			{
 				// If no device could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Render the details view with the device
@@ -106,7 +106,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct device using the ID
@@ -115,7 +115,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (device == null)
 			{
 				// If no device could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Create the device viewmodel
@@ -170,7 +170,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct device using the ID
@@ -179,7 +179,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (device == null)
 			{
 				// If no device could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Render the details view with the device
@@ -208,7 +208,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct device using the ID
@@ -217,7 +217,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (device == null)
 			{
 				// If no device could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Make a connection with the LoRa network
@@ -252,7 +252,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct device using the ID
@@ -261,7 +261,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (device == null)
 			{
 				// If no device could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Make a connection with the LoRa network
@@ -288,7 +288,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			// Make sure we have a valid ID
 			if (id == null)
 			{
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Find the correct device using the ID
@@ -297,7 +297,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			if (device == null)
 			{
 				// If no device could be found, show a 404 page
-				return HttpNotFound();
+				return NotFound();
 			}
 
 			// Make a connection with the LoRa network

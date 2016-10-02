@@ -1,6 +1,6 @@
 ﻿using Betabit.Lora.Nuget.Example.Models;
 using Kpn.LoRa.Client;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 
@@ -44,7 +44,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			get
 			{
 				// Retrieve the username from the appsettings.json
-				var connectionInfo = _configuration["Kpn::LoraClient::Username"];
+				var connectionInfo = _configuration["Kpn:LoraClient:Username"];
 
 				// Make sure we have a username
 				if (string.IsNullOrWhiteSpace(connectionInfo))
@@ -67,7 +67,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			get
 			{
 				// Retrieve the password from the appsettings.json
-				var connectionInfo = _configuration["Kpn::LoraClient::Password"];
+				var connectionInfo = _configuration["Kpn:LoraClient:Password"];
 
 				// Make sure we have a password
 				if (string.IsNullOrWhiteSpace(connectionInfo))
@@ -90,7 +90,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			get
 			{
 				// Retrieve the subscriber id from the appsettings.json
-				var connectionInfo = _configuration["Kpn::LoraClient::SubscriberId"];
+				var connectionInfo = _configuration["Kpn:LoraClient:SubscriberId"];
 
 				// Make sure we have a subscriber id
 				if (string.IsNullOrWhiteSpace(connectionInfo))
@@ -113,7 +113,7 @@ namespace Betabit.Lora.Nuget.Example.Controllers
 			get
 			{
 				// Retrieve the base address from the appsettings.json
-				var connectionInfo = _configuration["Kpn::LoraClient::BaseAddress"];
+				var connectionInfo = _configuration["Kpn:LoraClient:BaseAddress"];
 
 				// Make sure we have a base address
 				if (string.IsNullOrWhiteSpace(connectionInfo))
